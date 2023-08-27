@@ -11,31 +11,38 @@
 
 <body style="background-color: #7091F5;">
   <header>
-    <nav class="navbar bg-body-tertiary shadow p-3 mb-3 bg-body-tertiary">
+    <nav class="navbar shadow p-3 mb-3 " style="background-color: #272829;">
       <div class="container-fluid">
-        <a class="navbar-brand" href="https://www.imdb.com/">Films DATABASE</a>
+        <a class="navbar-brand" href="https://www.imdb.com/" style="color:white">Films DATABASE</a>
         <form method="post" class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Ingrese filme..." aria-label="Search" name="search">
+          <input class="form-control me-2" type="search" placeholder="Ingrese titulo..." aria-label="Search" name="search" required>
+          <input class="form-control me-2" type="search" placeholder="Ingrese año (opcional)" aria-label="Search" name="year">
           <button class="btn btn-outline-success" type="submit">Buscar</button>
         </form>
       </div>
     </nav>
   </header>
-  <div class="container">
+  <div class="container shadow-none p-3 mb-0 rounded">
     <style>
       p {
         color: white;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+        margin: 16px 0 0 0;
       }
-
+      .container span{
+        color: white;
+        text-align: center;
+      }
       .pelicula {
         height: 100%;
         min-height: 80vh;
         background-color: #793FDF;
         padding-top: 10px;
+        padding-bottom: 10px;
         border-color: #272829 !important;
         border-radius: 5px;
       }
-
       h1 {
         color: white
       }
@@ -43,24 +50,40 @@
         background-color: #272829;
         border-radius: 4px;
         padding: 5px;
-        min-height: 68vh;
+        flex-direction: column;
+        align-items: center;
+        min-width: 100px;
       }
-      .pelicula-content h3{
+      .pelicula-content img{
+        border-radius: 10px;
+      }
+      .pelicula-content h5{
         color: white;
+        text-align: center;
       }
     </style>
-    <div class="row">
-      <div class="col"></div>
-      <div class="pelicula col-10 border border-top-0 placeholder-glow">
-        <h1 class="text-center" id="movie">Bienvenido al proyecto IMDB</h1>
-        <div class="pelicula-content">
-          {{{indexContent}}}
-          {{{content}}}
+    <div class="row justify-content-center shadow-none p-3 mb-0 rounded">
+      <div class="pelicula col-10 border placeholder-glow shadow-lg p-3 mb-5 rounded">
+        <h1 class="text-center" id="movie">Films DATABASE proyect</h1>
+        <div class="pelicula-content d-flex aling-items-center justify-content-center text-start shadow-lg p-3 mb-5 rounded">
+          <div class="container-fluid">
+            <div class="row">
+              <h5>{{{h5content}}}</h5>
+              <div class="col-6">{{{content}}}</div>
+              <div class="col-6 align-items-center d-flex justify-content-center"
+              >{{{imgcontent}}}</div>
+            </div>
+          </div>
+          <br>
+          {{{sinopsiscontent}}}
         </div>
       </div>
-      <div class="col"></div>
-    </div>
   </div>
+  <footer>
+    <div class="container-fluid fixed-bottom" style="padding: 10px 0 5px 0;">
+      <span>Lucas Araujo (2023) ©</span>
+    </div>
+  </footer>
 </body>
 
 </html>
